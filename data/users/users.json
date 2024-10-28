@@ -1,0 +1,72 @@
+[
+    {
+        "last_name": "Shira",
+        "first_name": "GOGNON",
+        "birth_date": "22/10/2024",
+        "chess_id": "AB12346",
+        "score_total": 0
+    },
+    {
+        "last_name": "Marl\u00e8ne",
+        "first_name": "Agban",
+        "birth_date": "10/10/2024",
+        "chess_id": "AB12348",
+        "score_total": 0
+    },
+    {
+        "last_name": "Fafa",
+        "first_name": "Fatima",
+        "birth_date": "01/10/2000",
+        "chess_id": "AB12321",
+        "score_total": 0
+    },
+    {
+        "last_name": "Bake",
+        "first_name": "Banana",
+        "birth_date": "5/04/2020",
+        "chess_id": "AB12345",
+        "score_total": 0
+    },
+    {
+        "last_name": "Beka",
+        "first_name": "Canne Suce",
+        "birth_date": "01/01/2015",
+        "chess_id": "AB11345",
+        "score_total": 0
+    },
+    {
+        "last_name": "Amama",
+        "first_name": "Mandara",
+        "birth_date": "02/02/2001",
+        "chess_id": "AB12445",
+        "score_total": 0
+    },
+    {
+        "last_name": "Shara",
+        "first_name": "Shana*",
+        "birth_date": "03/01/1999",
+        "chess_id": "AB02345",
+        "score_total": 0
+    },
+    {
+        "last_name": "Ronaldo",
+        "first_name": "BestJ",
+        "birth_date": "03/07/1900",
+        "chess_id": "AB01345",
+        "score_total": 0
+    },
+     {
+        "last_name": "Messi",
+        "first_name": "FootBoss",
+        "birth_date": "03/07/1908",
+        "chess_id": "AB03245",
+        "score_total": 0
+    },
+     {
+        "last_name": "Mane",
+        "first_name": "FranceLabas",
+        "birth_date": "03/07/1918",
+        "chess_id": "AB03445",
+        "score_total": 0
+    }
+]
