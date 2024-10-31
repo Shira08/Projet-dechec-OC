@@ -1,7 +1,10 @@
 class UserView:
     @staticmethod
     def display_users(users):
-        for user in users:
+        if not any(users):
+           print("There is no users in the database")
+        else:
+          for user in users:
             print(f"Chess ID: {user['chess_id']}, "
                   f"Name: {user['first_name']} "
                   f"{user['last_name']}, "

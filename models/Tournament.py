@@ -109,10 +109,11 @@ class TournamentModel:
     def get_tournament_for_round(self, specified_name):
         for tournament in self.tournaments:
             if tournament["name"] == specified_name:
-                return Tournament.from_dict(tournament)
+                return tournament
         return []
     def update_tournament_in_file(self, tournaments_data):
         with open(self.file_path, "w") as file:
+            print(f'touenament data {tournaments_data}')
             json.dump(tournaments_data, file, indent=4)
 
     def update_tournaments(self,tournament):

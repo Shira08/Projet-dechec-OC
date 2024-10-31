@@ -23,7 +23,7 @@ class TournamentController:
 
     def create_round(self):
         specified_name = self.view.input_tournament_name()
-        get_tournament = self.model.get_tournament_for_round(specified_name).to_dict()
+        get_tournament = self.model.get_tournament_for_round(specified_name)
         if get_tournament:
             round_model = RoundModel()
             updated_tournament = self.model.update_tournaments(round_model.create_round(get_tournament))
