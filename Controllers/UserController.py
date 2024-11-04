@@ -1,6 +1,7 @@
 from models.User import User, UserModel
 from views.UserView import UserView
 
+
 class UserController:
     def __init__(self, user_file):
         self.model = UserModel(user_file)

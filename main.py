@@ -14,7 +14,8 @@ def main():
               "\n6. Get all rounds of a tournament and matches of each "
               "\n7. Create tournament"
               "\n8. Create round"
-              "\n98. Exit")
+              "\n9. Update round scores and mark as terminate"
+              "\n98.Exit")
         choice = input("Enter choice: ")
 
         if choice == '1':
@@ -26,17 +27,20 @@ def main():
         elif choice == '4':
             tournament_controller.get_specific_tournament()
         elif choice == '5':
-            print("wait some time")
+            tournament_controller.get_all_players_alphabetic_order()
         elif choice == '6':
-            print("wait some time")
+            tournament_controller.get_all_round_tournament()
         elif choice == '7':
             tournament_controller.add_tournament()
         elif choice == '8':
             tournament_controller.create_round()
+        elif choice == '9':
+            tournament_controller.update_round()
         elif choice == '98':
             break
         else:
             print("Invalid choice.")
+
 
 if __name__ == "__main__":
     main()
