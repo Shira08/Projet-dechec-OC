@@ -35,15 +35,15 @@ python main.py
 
 > [!Important]
 > ## Fonctionalities
-> Tournament:
+> - Tournament:
 > - Create tournament
-> -Round:
+> - Round:
 > - Create a round
 > - Update it with the score information
-> -Users
+> - Users
 > - Add user
 > - List users
-> Report
+> - Report
 > - List of all players in alphabetical order ;
 > - List of all tournaments ;
 > - Name and dates of a given tournament ;
