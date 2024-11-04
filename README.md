@@ -37,10 +37,10 @@ python main.py
 > ## Fonctionalities
 > Tournament:
 > - Create tournament
-> Round:
+> -Round:
 > - Create a round
 > - Update it with the score information
-> Users
+> -Users
 > - Add user
 > - List users
 > Report
