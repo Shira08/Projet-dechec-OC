@@ -66,6 +66,9 @@ class TournamentModel:
         self.tournaments = self.load_tournament()
 
     def load_tournament(self):
+        """
+        Getting all the tournaments from file
+        """
         try:
             with open(self.file_path, "r") as f:
                 content = f.read().strip()
@@ -77,10 +80,16 @@ class TournamentModel:
             return []
 
     def save_tournaments(self):
+        """
+        Saving the tournament
+        """
         with open(self.file_path, "w") as f:
             json.dump(self.tournaments, f, indent=4)
 
     def validate_tournament(self, tournament_check):
+        """
+
+        """
         tournaments = self.load_tournament()
         for tournament in tournaments:
             if tournament["name"] == tournament_check["name"]:
@@ -88,6 +97,9 @@ class TournamentModel:
         return True
 
     def create_tournament(self, tournament: Tournament):
+        """
+        Creation of tournament
+        """
         tournament_dict = tournament.to_dict()
         if self.validate_tournament(tournament_dict):
             print(f'Old Value{tournament_dict["players_list"]}')
@@ -102,9 +114,15 @@ class TournamentModel:
             return "Sorry, this name has already been assigned to a tournament."
 
     def get_all_tournaments(self):
+        """
+        Getting all the tournaments
+        """
         return self.tournaments
 
     def get_tournament_info(self, specified_name):
+        """
+        Getting information of a specific tournament
+        """
         for tournament in self.tournaments:
             if tournament["name"] == specified_name:
                 return {
@@ -115,12 +133,18 @@ class TournamentModel:
         return []
 
     def get_tournament(self, specified_name):
+        """
+        Getting a tournament rounds
+        """
         for tournament in self.tournaments:
             if tournament["name"] == specified_name:
                 return tournament["round_list"]
         return []
 
     def get_tournament_players(self, specified_name):
+        """
+        Getting players of a tournament
+        """
         for tournament in self.tournaments:
             if tournament["name"] == specified_name:
                 sorted_players_list = sorted(
