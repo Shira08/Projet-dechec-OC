@@ -1,0 +1,79 @@
+[
+    {
+        "last_name": "Aby",
+        "first_name": "Gaza",
+        "birth_date": "10/10/2010",
+        "chess_id": "AB10346",
+        "score_total": 0
+    },
+    {
+        "last_name": "Sunny",
+        "first_name": "Kigo",
+        "birth_date": "10/08/2000",
+        "chess_id": "AB10345",
+        "score_total": 0
+    },
+    {
+        "last_name": "Lulu",
+        "first_name": "Vroumette",
+        "birth_date": "8/10/2004",
+        "chess_id": "AB12346",
+        "score_total": 0
+    },
+    {
+        "last_name": "Boss",
+        "first_name": "Okay",
+        "birth_date": "2/08/2003",
+        "chess_id": "AB12331",
+        "score_total": 0
+    },
+    {
+        "last_name": "Joanne",
+        "first_name": "ANna",
+        "birth_date": "10/01/2000",
+        "chess_id": "AB12332",
+        "score_total": 0
+    },
+    {
+        "last_name": "Shiv",
+        "first_name": "Dognon",
+        "birth_date": "1/5/2006",
+        "chess_id": "AB12344",
+        "score_total": 0
+    },
+    {
+        "last_name": "Carmen",
+        "first_name": "Orlane",
+        "birth_date": "04/10/2007",
+        "chess_id": "AB12120",
+        "score_total": 0
+    },
+    {
+        "last_name": "Didi",
+        "first_name": "Zoss",
+        "birth_date": "02/09/2003",
+        "chess_id": "AB12326",
+        "score_total": 0
+    },
+    {
+        "last_name": "Happy",
+        "first_name": "Tidjani",
+        "birth_date": "10/10/1990",
+        "chess_id": "AB02346",
+        "score_total": 0
+    },
+    {
+        "last_name": "Yvan",
+        "first_name": "Vanish",
+        "birth_date": "04/03/2005",
+        "chess_id": "AC12346",
+        "score_total": 0
+    },
+    {
+        "last_name": "Goodwin",
+        "first_name": "Chinike",
+        "birth_date": "11/01/2010",
+        "chess_id": "AC11346",
+        "score_total": 0
+    }
+]

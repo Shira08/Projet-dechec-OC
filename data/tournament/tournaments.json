@@ -1,0 +1,373 @@
+[
+    {
+        "name": "Tournament1",
+        "location": "Akpakpa",
+        "start_date": "05-11-2024 19:09:41",
+        "end_date": null,
+        "tours": 4,
+        "current_round": 0,
+        "round_list": [],
+        "players_list": [
+            {
+                "last_name": "Carmen",
+                "first_name": "Orlane",
+                "birth_date": "04/10/2007",
+                "chess_id": "AB12120",
+                "score_total": 0
+            },
+            {
+                "last_name": "Aby",
+                "first_name": "Gaza",
+                "birth_date": "10/10/2010",
+                "chess_id": "AB10346",
+                "score_total": 0
+            },
+            {
+                "last_name": "Lulu",
+                "first_name": "Vroumette",
+                "birth_date": "8/10/2004",
+                "chess_id": "AB12346",
+                "score_total": 0
+            },
+            {
+                "last_name": "Didi",
+                "first_name": "Zoss",
+                "birth_date": "02/09/2003",
+                "chess_id": "AB12326",
+                "score_total": 0
+            },
+            {
+                "last_name": "Sunny",
+                "first_name": "Kigo",
+                "birth_date": "10/08/2000",
+                "chess_id": "AB10345",
+                "score_total": 0
+            },
+            {
+                "last_name": "Boss",
+                "first_name": "Okay",
+                "birth_date": "2/08/2003",
+                "chess_id": "AB12331",
+                "score_total": 0
+            },
+            {
+                "last_name": "Joanne",
+                "first_name": "ANna",
+                "birth_date": "10/01/2000",
+                "chess_id": "AB12332",
+                "score_total": 0
+            },
+            {
+                "last_name": "Shiv",
+                "first_name": "Dognon",
+                "birth_date": "1/5/2006",
+                "chess_id": "AB12344",
+                "score_total": 0
+            }
+        ],
+        "description": "Can do it",
+        "past_matches": []
+    },
+    {
+        "name": "Tournament2",
+        "location": "Calavi",
+        "start_date": "05-11-2024 19:13:57",
+        "end_date": null,
+        "tours": 4,
+        "current_round": 4,
+        "round_list": [
+            {
+                "name": "Round1",
+                "start_date": "05-11-2024 19:26:47",
+                "end_date": "06-11-2024 12:28:46",
+                "players": [
+                    {
+                        "player": {
+                            "last_name": "Happy",
+                            "first_name": "Tidjani",
+                            "birth_date": "10/10/1990",
+                            "chess_id": "AB02346",
+                            "score_total": 0
+                        },
+                        "score": 1
+                    },
+                    {
+                        "player": {
+                            "last_name": "Joanne",
+                            "first_name": "ANna",
+                            "birth_date": "10/01/2000",
+                            "chess_id": "AB12332",
+                            "score_total": 0
+                        },
+                        "score": 0
+                    }
+                ],
+                "terminate": true
+            },
+            {
+                "name": "Round2",
+                "start_date": "06-11-2024 13:37:55",
+                "end_date": "06-11-2024 13:39:03",
+                "players": [
+                    {
+                        "player": {
+                            "last_name": "Happy",
+                            "first_name": "Tidjani",
+                            "birth_date": "10/10/1990",
+                            "chess_id": "AB02346",
+                            "score_total": 1
+                        },
+                        "score": 0
+                    },
+                    {
+                        "player": {
+                            "last_name": "Didi",
+                            "first_name": "Zoss",
+                            "birth_date": "02/09/2003",
+                            "chess_id": "AB12326",
+                            "score_total": 0
+                        },
+                        "score": 1
+                    }
+                ],
+                "terminate": true
+            },
+            {
+                "name": "Round3",
+                "start_date": "06-11-2024 13:39:56",
+                "end_date": "06-11-2024 13:40:14",
+                "players": [
+                    {
+                        "player": {
+                            "last_name": "Didi",
+                            "first_name": "Zoss",
+                            "birth_date": "02/09/2003",
+                            "chess_id": "AB12326",
+                            "score_total": 1
+                        },
+                        "score": 0.5
+                    },
+                    {
+                        "player": {
+                            "last_name": "Lulu",
+                            "first_name": "Vroumette",
+                            "birth_date": "8/10/2004",
+                            "chess_id": "AB12346",
+                            "score_total": 0
+                        },
+                        "score": 0.5
+                    }
+                ],
+                "terminate": true
+            },
+            {
+                "name": "Round4",
+                "start_date": "06-11-2024 13:41:17",
+                "end_date": "06-11-2024 13:41:46",
+                "players": [
+                    {
+                        "player": {
+                            "last_name": "Didi",
+                            "first_name": "Zoss",
+                            "birth_date": "02/09/2003",
+                            "chess_id": "AB12326",
+                            "score_total": 1.5
+                        },
+                        "score": 0
+                    },
+                    {
+                        "player": {
+                            "last_name": "Shiv",
+                            "first_name": "Dognon",
+                            "birth_date": "1/5/2006",
+                            "chess_id": "AB12344",
+                            "score_total": 0
+                        },
+                        "score": 1
+                    }
+                ],
+                "terminate": true
+            }
+        ],
+        "players_list": [
+            {
+                "last_name": "Didi",
+                "first_name": "Zoss",
+                "birth_date": "02/09/2003",
+                "chess_id": "AB12326",
+                "score_total": 1.5
+            },
+            {
+                "last_name": "Happy",
+                "first_name": "Tidjani",
+                "birth_date": "10/10/1990",
+                "chess_id": "AB02346",
+                "score_total": 1
+            },
+            {
+                "last_name": "Lulu",
+                "first_name": "Vroumette",
+                "birth_date": "8/10/2004",
+                "chess_id": "AB12346",
+                "score_total": 0.5
+            },
+            {
+                "last_name": "Shiv",
+                "first_name": "Dognon",
+                "birth_date": "1/5/2006",
+                "chess_id": "AB12344",
+                "score_total": 1
+            },
+            {
+                "last_name": "Boss",
+                "first_name": "Okay",
+                "birth_date": "2/08/2003",
+                "chess_id": "AB12331",
+                "score_total": 0
+            },
+            {
+                "last_name": "Aby",
+                "first_name": "Gaza",
+                "birth_date": "10/10/2010",
+                "chess_id": "AB10346",
+                "score_total": 0
+            },
+            {
+                "last_name": "Carmen",
+                "first_name": "Orlane",
+                "birth_date": "04/10/2007",
+                "chess_id": "AB12120",
+                "score_total": 0
+            },
+            {
+                "last_name": "Joanne",
+                "first_name": "ANna",
+                "birth_date": "10/01/2000",
+                "chess_id": "AB12332",
+                "score_total": 0
+            }
+        ],
+        "description": "You did it",
+        "past_matches": [
+            [
+                "AB02346",
+                "AB12332"
+            ],
+            [
+                "AB02346",
+                "AB12326"
+            ],
+            [
+                "AB12326",
+                "AB12346"
+            ],
+            [
+                "AB12326",
+                "AB12344"
+            ]
+        ]
+    },
+    {
+        "name": "Tournament3",
+        "location": "frfrfr",
+        "start_date": "06-11-2024 15:17:28",
+        "end_date": null,
+        "tours": 4,
+        "current_round": 1,
+        "round_list": [
+            {
+                "name": "Round1",
+                "start_date": "06-11-2024 15:46:42",
+                "end_date": "06-11-2024 15:51:58",
+                "players": [
+                    {
+                        "player": {
+                            "last_name": "Joanne",
+                            "first_name": "ANna",
+                            "birth_date": "10/01/2000",
+                            "chess_id": "AB12332",
+                            "score_total": 0
+                        },
+                        "score": 0.5
+                    },
+                    {
+                        "player": {
+                            "last_name": "Happy",
+                            "first_name": "Tidjani",
+                            "birth_date": "10/10/1990",
+                            "chess_id": "AB02346",
+                            "score_total": 1
+                        },
+                        "score": 0.5
+                    }
+                ],
+                "terminate": true
+            }
+        ],
+        "players_list": [
+            {
+                "last_name": "Boss",
+                "first_name": "Okay",
+                "birth_date": "2/08/2003",
+                "chess_id": "AB12331",
+                "score_total": 0
+            },
+            {
+                "last_name": "Lulu",
+                "first_name": "Vroumette",
+                "birth_date": "8/10/2004",
+                "chess_id": "AB12346",
+                "score_total": 0.5
+            },
+            {
+                "last_name": "Happy",
+                "first_name": "Tidjani",
+                "birth_date": "10/10/1990",
+                "chess_id": "AB02346",
+                "score_total": 1.5
+            },
+            {
+                "last_name": "Shiv",
+                "first_name": "Dognon",
+                "birth_date": "1/5/2006",
+                "chess_id": "AB12344",
+                "score_total": 1
+            },
+            {
+                "last_name": "Didi",
+                "first_name": "Zoss",
+                "birth_date": "02/09/2003",
+                "chess_id": "AB12326",
+                "score_total": 1.5
+            },
+            {
+                "last_name": "Aby",
+                "first_name": "Gaza",
+                "birth_date": "10/10/2010",
+                "chess_id": "AB10346",
+                "score_total": 0
+            },
+            {
+                "last_name": "Joanne",
+                "first_name": "ANna",
+                "birth_date": "10/01/2000",
+                "chess_id": "AB12332",
+                "score_total": 0.5
+            },
+            {
+                "last_name": "Carmen",
+                "first_name": "Orlane",
+                "birth_date": "04/10/2007",
+                "chess_id": "AB12120",
+                "score_total": 0
+            }
+        ],
+        "description": "azdde",
+        "past_matches": [
+            [
+                "AB12332",
+                "AB02346"
+            ]
+        ]
+    }
+]

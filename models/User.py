@@ -1,4 +1,5 @@
 import json
+import os
 
 FILEPATH = "data/users/users.json"
 
@@ -27,10 +28,15 @@ class UserModel:
         self.users = self.load_users()
 
     def load_users(self):
-        try:
-            with open(self.file_path, "r") as f:
-                return json.load(f)
-        except FileNotFoundError:
+        if os.path.exists(self.file_path) and os.path.getsize(self.file_path) > 0:
+            try:
+                with open(self.file_path, "r") as f:
+                    return json.load(f) or []
+            except json.JSONDecodeError:
+                print("Error: Invalid JSON format in users file.")
+                return []
+        else:
+            print("File is empty or does not exist. Returning an empty user list.")
             return []
 
     def save_users(self):

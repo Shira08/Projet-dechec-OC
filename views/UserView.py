@@ -2,7 +2,8 @@ class UserView:
     @staticmethod
     def display_users(users):
         if not any(users):
-            print("There is no users in the database")
+            print("There is no users in the database.\n"
+                  "Add a user")
         else:
             for user in users:
                 print(

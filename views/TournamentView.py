@@ -56,30 +56,47 @@ class TournamentView:
         return name
 
     @staticmethod
+    def input_tournament_round():
+        name = input(
+            "Please specify the tournament for " "which you want to create a round:"
+        )
+        return name
+
+    @staticmethod
     def update_scores():
-        name = input("Please specify the tournament you want to get: ")
+        name = input("Please specify the tournament name: ")
         return name
 
     @staticmethod
     def display_all_round(round_list):
-        for round in round_list:
-            print(f"\nRound Name: {round['name']}")
-            print(f"Start Date: {round['start_date']}")
-            print(f"End Date: {round['end_date'] if round['end_date'] else 'In progress'}")
-            print(f"Round Terminated: {'Yes' if round['terminate'] else 'No'}")
-            print("Matches:")
-
-            for match in round["players"]:
-                player = match["player"]
+        """
+        Display tournament rounds
+        """
+        if isinstance(round_list, list) and round_list:
+            for round in round_list:
+                print(f"\nRound Name: {round['name']}")
+                print(f"Start Date: {round['start_date']}")
                 print(
-                    f"  - {player['first_name']} {player['last_name']} (ID: {player['chess_id']})"
+                    f"End Date: {round['end_date'] if round['end_date'] else 'In progress'}"
                 )
-                print(f"    Birth Date: {player['birth_date']}")
-                print(f"    Score in Match: {match['score']}")
-                print(f"    Total Score: {player['score_total']}\n")
+                print(f"Round Terminated: {'Yes' if round['terminate'] else 'No'}")
+                print("Matches:")
+
+                for match in round["players"]:
+                    player = match["player"]
+                    print(
+                        f"  - {player['first_name']} {player['last_name']} (ID: {player['chess_id']})"
+                    )
+                    print(f"    Birth Date: {player['birth_date']}")
+                    print(f"    Score in Match: {match['score']}")
+        else:
+            print("There is no round or tournament does not exist,Pls create one")
 
     @staticmethod
     def display_round_player(players_list):
+        """
+        Display players of a round
+        """
         print("Find below the player associated to the last round")
         for player_info in players_list:
             player = player_info.get("player", {})

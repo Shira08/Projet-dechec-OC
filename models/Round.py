@@ -33,12 +33,16 @@ class Round:
 class RoundModel:
 
     def create_round(self, tournament):
+        """
+        Create a round using tournament
+        Make sure last round has been terminated
+        """
         round_name = f'Round{tournament["current_round"] + 1}'
         round_ = Round(round_name)
         round_to_dict = round_.to_dict()
         round_to_search = f'Round{tournament["current_round"]}'
+        print(f"ok{tournament}")
 
-        # Vérifie si le tournoi est vide ou si le round actuel est terminé
         if tournament["current_round"] == 4:
             tournament["end_date"] = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
             return "The tournament is finished. You can no longer create new rounds."
@@ -50,25 +54,38 @@ class RoundModel:
             )
             or tournament["current_round"] == 0
         ):
-            # Génère les paires et met à jour les matchs passés
             round_to_dict["players"], tournament["past_matches"] = self.generate_pair(
                 tournament["players_list"],
                 tournament["current_round"],
                 tournament["past_matches"],
             )
             tournament["current_round"] += 1
+            if tournament["current_round"] == 4:
+                tournament["end_date"] = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+
             tournament["round_list"].append(round_to_dict)
 
             print(f"Final tournament: {json.dumps(tournament)}")
             return tournament
+
+        # Checking if any round has the same name but is not yet terminated
+        for round in tournament["round_list"]:
+            if round_to_search == round["name"] and not round["terminate"]:
+                text_result = f"Make sure the {round['name']} has been terminated"
+                return text_result
         return []
 
     def generate_pair(self, players_list, current_round, past_matches):
+        """
+        Generate a pair of users for each match
+        -Get ramdom users for first time
+        -For other time follow the scores
+        """
+        selected_players_list = []
+        selected_pair = []
         if current_round == 0:
-            print("iam first coming")
             selected_pair = random.sample(players_list, 2)
-            print(f"selcted ones {selected_pair}")
-            selected_players_list = []
+
             for player in selected_pair:
                 selected_players_list.append(
                     {"player": to_dict_player(player), "score": 0}
@@ -82,67 +99,41 @@ class RoundModel:
             sorted_players = sorted(
                 players_list, key=lambda x: x["score_total"], reverse=True
             )
-            selected_pair = []
-            selected_players_list = []
 
             while True:
-                sorted_players_pair = random.sample(sorted_players, 2)
+                top_player = sorted_players.pop(0)
 
-                # Vérifie si la paire aléatoire existe déjà dans past_matches
-                if (
-                    sorted_players_pair[0]["chess_id"],
-                    sorted_players_pair[1]["chess_id"],
-                ) not in past_matches and (
-                    sorted_players_pair[1]["chess_id"],
-                    sorted_players_pair[0]["chess_id"],
-                ) not in past_matches:
+                opponent = None
+                for player in sorted_players[:]:
+                    if (
+                        top_player["chess_id"],
+                        player["chess_id"],
+                    ) not in past_matches and (
+                        player["chess_id"],
+                        top_player["chess_id"],
+                    ) not in past_matches:
+                        opponent = player
+                        sorted_players.remove(player)
+                        break
+
+                if opponent:
+                    selected_pair.append((top_player, opponent))
+                    past_matches.append((top_player["chess_id"], opponent["chess_id"]))
+
+                    selected_players_list.append(
+                        {"player": to_dict_player(top_player), "score": 0}
+                    )
+                    selected_players_list.append(
+                        {"player": to_dict_player(opponent), "score": 0}
+                    )
+
+                    print(selected_players_list)
                     break
+                else:
+                    sorted_players = sorted(
+                        players_list, key=lambda x: x["score_total"], reverse=True
+                    )
 
-            print("not first time coming")
-            selected_pair.append((sorted_players_pair[0], sorted_players_pair[1]))
-            past_matches.append(
-                (sorted_players_pair[0]["chess_id"], sorted_players_pair[1]["chess_id"])
-            )
-
-            print(f"Users pair {selected_pair}")
-
-            # Création de la liste finale avec les informations des joueurs sélectionnés
-            selected_players_list.append(
-                {"player": to_dict_player(sorted_players_pair[0]), "score": 0}
-            )
-            selected_players_list.append(
-                {"player": to_dict_player(sorted_players_pair[1]), "score": 0}
-            )
-
-            print(selected_players_list)
             return selected_players_list, past_matches
 
-
-"""
-ajouter ça sous la forme
-
-players: [
-{
-joueur1: {
-        "last_name": "Ronaldo",
-        "first_name": "BestJ",
-        "birth_date": "03/07/1900",
-        "chess_id": "AB01345",
-        "score_total": 0
-    },
-score: 1
-},
-{
-joueur2: {
-        "last_name": "Ronaldo",
-        "first_name": "BestJ",
-        "birth_date": "03/07/1900",
-        "chess_id": "AB01345",
-        "score_total": 0
-    },
-score: 1
-}]
-
-Ma préoccupation est comment je peux voir
-
-"""
+        return selected_players_list, past_matches

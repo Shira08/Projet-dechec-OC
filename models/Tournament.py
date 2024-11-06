@@ -87,9 +87,7 @@ class TournamentModel:
             json.dump(self.tournaments, f, indent=4)
 
     def validate_tournament(self, tournament_check):
-        """
-
-        """
+        """ """
         tournaments = self.load_tournament()
         for tournament in tournaments:
             if tournament["name"] == tournament_check["name"]:
@@ -102,14 +100,29 @@ class TournamentModel:
         """
         tournament_dict = tournament.to_dict()
         if self.validate_tournament(tournament_dict):
-            print(f'Old Value{tournament_dict["players_list"]}')
+
+            # Get the list of all users
             user_model = UserModel()
-            users_list = random.sample(user_model.get_all_users(), 8)
-            tournament_dict["players_list"] = users_list
-            print(f'New value{tournament_dict["players_list"]}')
+            users_list = user_model.get_all_users()
+
+            # Check if there are enough users
+            if len(users_list) < 8:
+                return (
+                    "Not enough users to create the tournament. Please add more users."
+                )
+
+            # If there are enough users, randomly select 8 users
+            selected_users = random.sample(users_list, 8)
+
+            # Update the players list in the tournament dictionary
+            tournament_dict["players_list"] = selected_users
+
+            # Add the tournament to the list and save it
             self.tournaments.append(tournament_dict)
             self.save_tournaments()
+
             return "Tournament created successfully!"
+
         else:
             return "Sorry, this name has already been assigned to a tournament."
 
@@ -154,12 +167,27 @@ class TournamentModel:
         return []
 
     def get_tournament_for_round(self, specified_name):
+        """
+        Get actual round list
+        """
+        for tournament in self.tournaments:
+            if tournament["name"] == specified_name:
+                return tournament["round_list"]
+        return "This tournament does not exist"
+
+    def get_tournament_last_round(self, specified_name):
+        """
+        Get actual round list
+        """
         for tournament in self.tournaments:
             if tournament["name"] == specified_name:
                 return tournament
         return "This tournament does not exist"
 
     def get_last_round_of_tournament(self, specified_name):
+        """
+        Get the last round of a tournament
+        """
         for tournament in self.tournaments:
             if tournament["name"] == specified_name:
                 round_to_check = f'Round{tournament["current_round"]}'
@@ -179,21 +207,20 @@ class TournamentModel:
         return []
 
     def update_tournament_in_file(self, tournaments_data):
+        """
+        Update the tournament in the file after updating with update_tournament
+        """
         try:
-            # Debug print to verify tournament data before saving
-            print(f"Tournament data to save: {tournaments_data}")
-
-            # Open the file and write data in JSON format
             with open(self.file_path, "w") as file:
                 json.dump(tournaments_data, file, indent=4)
-            print("Tournament data successfully updated.")
 
         except (IOError, TypeError) as e:
-            # Handle exceptions for file I/O errors or data serialization issues
             print(f"Error saving tournament data to file: {e}")
 
     def update_tournament(self, tournament):
-        # Ensure the tournament is valid before updating
+        """
+        Update tournament data for each action
+        """
         if isinstance(tournament, str):
             return tournament
         if tournament:
@@ -201,7 +228,7 @@ class TournamentModel:
             for i, existing_tournament in enumerate(tournaments_data):
                 if existing_tournament["name"] == tournament["name"]:
                     tournaments_data[i] = tournament
-                    print("Updated tournament data:", tournaments_data)
+                    # print("Updated tournament data:", tournaments_data)
                     self.update_tournament_in_file(
                         tournaments_data
                     )  # Ensure data is saved to file
@@ -212,11 +239,20 @@ class TournamentModel:
         return None
 
     def update_scores(self, tournament, scores, round_):
+        """
+        Update players scores
+        """
         for round_item in tournament["round_list"]:
             if round_item["name"] == round_:
                 for player in round_item["players"]:
                     if scores == 0:
-                        player["score"] = 0
+                        for tournament_player in tournament["players_list"]:
+                            if (
+                                tournament_player["chess_id"]
+                                == player["player"]["chess_id"]
+                            ):
+                                tournament_player["score_total"] += 0.5
+                        player["score"] = 0.5
                     else:
                         if player["player"]["chess_id"] == scores:
                             for tournament_player in tournament["players_list"]:

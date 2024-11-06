@@ -8,11 +8,17 @@ class UserController:
         self.view = UserView()
 
     def list_users(self):
+        """
+        List all users
+        """
         users = self.model.get_all_users()
         sorted_users = sorted(users, key=lambda user: user["last_name"])
         self.view.display_users(sorted_users)
 
     def add_user(self):
+        """
+        Ajout d'un utilisateur
+        """
         last_name, first_name, birth_date, chess_id = self.view.input_user_details()
         user = User(last_name, first_name, birth_date, chess_id)
         self.model.add_user(user)
